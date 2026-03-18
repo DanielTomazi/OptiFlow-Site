@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../../core/services/theme.service';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 interface NavItem {
   label: string;
@@ -16,9 +16,13 @@ interface NavItem {
   imports: [CommonModule, RouterLink, RouterLinkActive, ButtonComponent],
   animations: [
     trigger('mobileMenu', [
-      state('closed', style({ opacity: 0, transform: 'translateY(-12px)', pointerEvents: 'none' })),
-      state('open',   style({ opacity: 1, transform: 'translateY(0)',      pointerEvents: 'auto' })),
-      transition('closed <=> open', animate('250ms cubic-bezier(0.4,0,0.2,1)')),
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-12px)' }),
+        animate('250ms cubic-bezier(0.4,0,0.2,1)', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        animate('200ms cubic-bezier(0.4,0,0.2,1)', style({ opacity: 0, transform: 'translateY(-12px)' })),
+      ]),
     ]),
   ],
   template: `
@@ -95,32 +99,34 @@ interface NavItem {
       </div>
 
       <!-- Mobile Menu -->
-      <nav
-        id="mobile-menu"
-        class="header__mobile"
-        [attr.aria-label]="'Navegação mobile'"
-        [@mobileMenu]="menuOpen() ? 'open' : 'closed'"
-      >
-        @for (item of navItems; track item.path) {
-          <a
-            [routerLink]="item.path"
-            routerLinkActive="header__mobile-link--active"
-            class="header__mobile-link"
-            (click)="menuOpen.set(false)"
-          >
-            {{ item.label }}
-          </a>
-        }
-        <div class="header__mobile-actions">
-          <a routerLink="/contato" class="header__btn-enter" (click)="menuOpen.set(false)">
-            Entrar
-          </a>
-          <a routerLink="/contato" class="header__btn-demo" (click)="menuOpen.set(false)">
-            <span class="material-icons-round" aria-hidden="true">calendar_month</span>
-            Agendar Demo
-          </a>
-        </div>
-      </nav>
+      @if (menuOpen()) {
+        <nav
+          id="mobile-menu"
+          class="header__mobile"
+          [attr.aria-label]="'Navegação mobile'"
+          [@mobileMenu]
+        >
+          @for (item of navItems; track item.path) {
+            <a
+              [routerLink]="item.path"
+              routerLinkActive="header__mobile-link--active"
+              class="header__mobile-link"
+              (click)="menuOpen.set(false)"
+            >
+              {{ item.label }}
+            </a>
+          }
+          <div class="header__mobile-actions">
+            <a routerLink="/contato" class="header__btn-enter" (click)="menuOpen.set(false)">
+              Entrar
+            </a>
+            <a routerLink="/contato" class="header__btn-demo" (click)="menuOpen.set(false)">
+              <span class="material-icons-round" aria-hidden="true">calendar_month</span>
+              Agendar Demo
+            </a>
+          </div>
+        </nav>
+      }
     </header>
   `,
   styles: [`
