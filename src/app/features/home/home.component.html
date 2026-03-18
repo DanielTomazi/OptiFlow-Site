@@ -1,0 +1,520 @@
+<div class="page-enter">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 1 — HERO
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Apresentação da OptiFlow" [@heroEnter]>
+    <!-- Background decorations -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__bg-gradient"></div>
+      <div class="hero__bg-grid dot-pattern"></div>
+      <div class="hero__bg-orb hero__bg-orb--1"></div>
+      <div class="hero__bg-orb hero__bg-orb--2"></div>
+    </div>
+
+    <div class="container hero__inner">
+      <!-- Left: Text -->
+      <div class="hero__content">
+        <div class="hero__animate">
+          <div class="hero__badges">
+            <app-badge text="LGPD Compliant" variant="success" icon="verified_user" />
+            <app-badge text="Sem TI necessária" variant="primary" icon="bolt" />
+            <app-badge text="Setup em 1 dia" variant="purple" icon="timer" />
+          </div>
+        </div>
+
+        <h1 class="hero__animate hero__headline">
+          Entregue mais.<br/>
+          <span class="gradient-text">Gaste menos.</span><br/>
+          Decida com dados.
+        </h1>
+
+        <p class="hero__animate hero__subtitle">
+          OptiFlow otimiza as rotas, aloca os motoristas e gera os KPIs que sua operação logística precisa — tudo em uma plataforma SaaS acessível para PMEs.
+        </p>
+
+        <div class="hero__animate hero__ctas">
+          <a routerLink="/contato" class="btn-hero-primary">
+            <span class="material-icons-round" aria-hidden="true">rocket_launch</span>
+            Começar gratuitamente
+          </a>
+          <a routerLink="/funcionalidades" class="btn-hero-outlined">
+            <span class="material-icons-round" aria-hidden="true">play_circle</span>
+            Ver demonstração
+          </a>
+        </div>
+
+        <div class="hero__animate hero__social-proof">
+          <div class="hero__avatars" aria-hidden="true">
+            <div class="hero__avatar" style="background: #1A73E8">C</div>
+            <div class="hero__avatar" style="background: #34A853">A</div>
+            <div class="hero__avatar" style="background: #9334E6">R</div>
+            <div class="hero__avatar" style="background: #EA4335">M</div>
+          </div>
+          <p class="hero__social-text">
+            <strong>+200 PMEs</strong> já otimizam suas entregas com OptiFlow
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Dashboard Mockup -->
+      <div class="hero__visual hero__animate" aria-hidden="true">
+        <div class="dashboard-mock">
+          <!-- Header bar -->
+          <div class="dashboard-mock__header">
+            <div class="dashboard-mock__dots">
+              <span style="background:#EA4335"></span>
+              <span style="background:#FBBC05"></span>
+              <span style="background:#34A853"></span>
+            </div>
+            <span class="dashboard-mock__title">OptiFlow Dashboard</span>
+          </div>
+
+          <!-- KPI Cards row -->
+          <div class="dashboard-mock__kpis">
+            <div class="dashboard-mock__kpi">
+              <span class="dashboard-mock__kpi-label">Custo/entrega</span>
+              <span class="dashboard-mock__kpi-value">R$ 8,40</span>
+              <span class="dashboard-mock__kpi-trend good">▼ 23%</span>
+            </div>
+            <div class="dashboard-mock__kpi">
+              <span class="dashboard-mock__kpi-label">No prazo</span>
+              <span class="dashboard-mock__kpi-value">96,8%</span>
+              <span class="dashboard-mock__kpi-trend good">▲ 12%</span>
+            </div>
+            <div class="dashboard-mock__kpi">
+              <span class="dashboard-mock__kpi-label">Rotas hoje</span>
+              <span class="dashboard-mock__kpi-value">47</span>
+              <span class="dashboard-mock__kpi-trend neutral">— 0%</span>
+            </div>
+          </div>
+
+          <!-- Map area -->
+          <div class="dashboard-mock__map">
+            <svg viewBox="0 0 320 160" class="dashboard-mock__map-svg">
+              <!-- Background -->
+              <rect width="320" height="160" fill="#1E293B" rx="8"/>
+              <!-- Grid lines -->
+              <g stroke="#334155" stroke-width="1" opacity="0.5">
+                <line x1="0" y1="40" x2="320" y2="40"/>
+                <line x1="0" y1="80" x2="320" y2="80"/>
+                <line x1="0" y1="120" x2="320" y2="120"/>
+                <line x1="80" y1="0" x2="80" y2="160"/>
+                <line x1="160" y1="0" x2="160" y2="160"/>
+                <line x1="240" y1="0" x2="240" y2="160"/>
+              </g>
+              <!-- City outline (simplified) -->
+              <path d="M40,120 L80,90 L110,100 L140,70 L180,80 L210,60 L250,75 L280,55" stroke="#1A73E8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <!-- Route path 1 -->
+              <path d="M60,100 C80,85 100,95 130,80 C155,67 175,72 200,58 C215,50 235,65 255,60" stroke="#34A853" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 2"/>
+              <!-- Route path 2 -->
+              <path d="M70,110 C95,100 115,108 145,90 C165,78 185,85 210,72" stroke="#FBBC05" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4 2"/>
+              <!-- Delivery points -->
+              <circle cx="60" cy="100" r="5" fill="#1A73E8"/>
+              <circle cx="130" cy="80" r="4" fill="#34A853"/>
+              <circle cx="200" cy="58" r="4" fill="#34A853"/>
+              <circle cx="255" cy="60" r="4" fill="#34A853"/>
+              <circle cx="145" cy="90" r="4" fill="#FBBC05"/>
+              <circle cx="210" cy="72" r="4" fill="#FBBC05"/>
+              <!-- Label -->
+              <rect x="200" y="108" width="110" height="28" rx="6" fill="#1A73E8" opacity="0.9"/>
+              <text x="255" y="126" text-anchor="middle" fill="white" font-size="9" font-weight="600">47 rotas otimizadas</text>
+            </svg>
+            <div class="dashboard-mock__map-badge">
+              <span class="material-icons-round">my_location</span>
+              SP · 47 entregas ativas
+            </div>
+          </div>
+
+          <!-- Chart -->
+          <div class="dashboard-mock__chart">
+            <span class="dashboard-mock__chart-label">Entregas esta semana</span>
+            <div class="dashboard-mock__bars">
+              @for (bar of mockBars; track bar.day) {
+                <div class="dashboard-mock__bar-wrap">
+                  <div class="dashboard-mock__bar" [style.height.%]="bar.pct"></div>
+                  <span class="dashboard-mock__bar-day">{{ bar.day }}</span>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badges -->
+        <div class="hero__float hero__float--1">
+          <span class="material-icons-round">check_circle</span>
+          Rota otimizada em 0,3s
+        </div>
+        <div class="hero__float hero__float--2">
+          <span class="material-icons-round">savings</span>
+          -R$ 1.240 esta semana
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-dot"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 2 — STATS / SOCIAL PROOF
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="stats section--surface section" aria-label="Números de impacto">
+    <div class="container">
+      <div [appAos]="'fade-up'" class="stats__grid">
+        @for (stat of stats; track stat.label) {
+          <div class="stats__item">
+            <app-stat-counter
+              [target]="stat.target"
+              [suffix]="stat.suffix"
+              [label]="stat.label"
+              [description]="stat.description"
+            />
+          </div>
+        }
+      </div>
+
+      <div [appAos]="'fade-up'" [aosDelay]="200" class="stats__bottom">
+        <span class="material-icons-round stats__icon">business</span>
+        <p>Mercado endereçável de <strong>R$ 8,5 bilhões</strong> em logística de última milha no Brasil</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 3 — HOW IT WORKS
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="how section" aria-labelledby="how-title">
+    <div class="container">
+      <app-section-header
+        eyebrow="Como funciona"
+        title="Em 3 passos,"
+        titleHighlight="sua operação decola."
+        subtitle="Do cadastro à primeira rota otimizada em menos de 24 horas. Sem burocracia, sem necessidade de equipe de TI."
+        [appAos]="'fade-up'"
+      />
+
+      <div class="how__steps">
+        @for (step of steps; track step.number; let i = $index) {
+          <div class="how__step" [appAos]="'fade-up'" [aosDelay]="i * 150">
+            <!-- Connector line -->
+            @if (i < steps.length - 1) {
+              <div class="how__connector" aria-hidden="true"></div>
+            }
+            <div class="how__step-icon">
+              <span class="material-icons-round">{{ step.icon }}</span>
+            </div>
+            <div class="how__step-num">{{ step.number }}</div>
+            <h3 class="how__step-title">{{ step.title }}</h3>
+            <p class="how__step-desc">{{ step.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 4 — FEATURES GRID
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="features-grid section section--surface" aria-labelledby="features-title">
+    <div class="container">
+      <app-section-header
+        eyebrow="Plataforma completa"
+        title="Tudo que sua operação"
+        titleHighlight="precisa, em um só lugar."
+        subtitle="Quatro módulos integrados para transformar a logística da sua empresa do caos à excelência operacional."
+        [appAos]="'fade-up'"
+      />
+
+      <div class="features-grid__cards grid-2">
+        @for (f of features; track f.title; let i = $index) {
+          <app-feature-card
+            [title]="f.title"
+            [description]="f.description"
+            [icon]="f.icon"
+            [iconColor]="f.iconColor"
+            [iconBg]="f.iconBg"
+            [bullets]="f.bullets"
+            [appAos]="'fade-up'"
+            [aosDelay]="(i % 2) * 100"
+          />
+        }
+      </div>
+
+      <div class="features-grid__cta" [appAos]="'fade-up'" [aosDelay]="200">
+        <a routerLink="/funcionalidades" class="features-grid__cta-link">
+          Ver todas as funcionalidades
+          <span class="material-icons-round">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 5 — DASHBOARD PREVIEW
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="preview section section--dark" aria-labelledby="preview-title">
+    <div class="container">
+      <app-section-header
+        eyebrow="Dashboard em tempo real"
+        title="Visibilidade total da"
+        titleHighlight="sua operação."
+        subtitle="Do custo por entrega ao faturamento por região. Tome decisões com dados, não com achismos."
+        [light]="true"
+        [appAos]="'fade-up'"
+      />
+
+      <div class="preview__dashboard" [appAos]="'zoom-in'" [aosDelay]="100">
+        <div class="preview__dashboard-inner">
+          <!-- Top KPI strip -->
+          <div class="preview__kpi-strip">
+            @for (kpi of dashboardKpis; track kpi.label) {
+              <div class="preview__kpi">
+                <span class="material-icons-round preview__kpi-icon">{{ kpi.icon }}</span>
+                <div>
+                  <div class="preview__kpi-value">{{ kpi.value }}</div>
+                  <div class="preview__kpi-label">{{ kpi.label }}</div>
+                </div>
+              </div>
+            }
+          </div>
+
+          <!-- Content area: chart + map -->
+          <div class="preview__content">
+            <!-- Line chart -->
+            <div class="preview__chart-area">
+              <div class="preview__chart-header">
+                <span class="preview__chart-title">Faturamento mensal</span>
+                <span class="preview__chart-badge">+18% MoM</span>
+              </div>
+              <svg viewBox="0 0 400 140" class="preview__line-chart">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1A73E8" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#1A73E8" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,120 C40,100 60,80 100,70 C140,60 160,90 200,55 C240,20 260,40 300,30 C340,20 370,35 400,20" stroke="#1A73E8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M0,120 C40,100 60,80 100,70 C140,60 160,90 200,55 C240,20 260,40 300,30 C340,20 370,35 400,20 L400,140 L0,140 Z" fill="url(#lineGrad)"/>
+                <!-- Data points -->
+                <circle cx="100" cy="70" r="4" fill="#1A73E8"/>
+                <circle cx="200" cy="55" r="4" fill="#1A73E8"/>
+                <circle cx="300" cy="30" r="4" fill="#1A73E8"/>
+                <circle cx="400" cy="20" r="5" fill="#1A73E8" stroke="white" stroke-width="2"/>
+              </svg>
+            </div>
+
+            <!-- Heat map + driver table -->
+            <div class="preview__right">
+              <div class="preview__heat-label">Mapa de calor por região</div>
+              <svg viewBox="0 0 160 120" class="preview__heat-map">
+                <rect width="160" height="120" fill="#1E293B" rx="8"/>
+                <circle cx="80" cy="60" r="50" fill="#1A73E8" opacity="0.08"/>
+                <circle cx="80" cy="60" r="35" fill="#1A73E8" opacity="0.1"/>
+                <circle cx="80" cy="60" r="22" fill="#1A73E8" opacity="0.15"/>
+                <circle cx="80" cy="60" r="12" fill="#1A73E8" opacity="0.3"/>
+                <circle cx="40" cy="40" r="18" fill="#34A853" opacity="0.2"/>
+                <circle cx="130" cy="85" r="14" fill="#FBBC05" opacity="0.2"/>
+                <text x="80" y="64" text-anchor="middle" fill="#60A5FA" font-size="9" font-weight="600">São Paulo</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Driver table -->
+          <div class="preview__table">
+            <div class="preview__table-header">
+              <span>Motorista</span><span>Entregas</span><span>Eficiência</span><span>Status</span>
+            </div>
+            @for (driver of dashboardDrivers; track driver.name) {
+              <div class="preview__table-row">
+                <div class="preview__driver">
+                  <div class="preview__driver-avatar" [style.background]="driver.color">{{ driver.initials }}</div>
+                  <span>{{ driver.name }}</span>
+                </div>
+                <span>{{ driver.deliveries }}/{{ driver.total }}</span>
+                <div class="preview__efficiency">
+                  <div class="preview__efficiency-bar">
+                    <div class="preview__efficiency-fill" [style.width.%]="driver.efficiency" [style.background]="driver.color"></div>
+                  </div>
+                  <span>{{ driver.efficiency }}%</span>
+                </div>
+                <span class="preview__status" [class]="'preview__status--' + driver.status">{{ driver.statusLabel }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 6 — INTEGRATIONS
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="integrations section" aria-labelledby="integrations-title">
+    <div class="container">
+      <app-section-header
+        eyebrow="Integrações nativas"
+        title="Conecta com as plataformas"
+        titleHighlight="que você já usa."
+        subtitle="Sem CSV, sem digitação manual. Sincronização automática de pedidos em tempo real."
+        [appAos]="'fade-up'"
+      />
+
+      <div class="integrations__grid" [appAos]="'fade-up'" [aosDelay]="100">
+        @for (int of integrations; track int.name) {
+          <div class="integrations__card">
+            <div class="integrations__logo" [style.background]="int.color + '15'" [style.border-color]="int.color + '30'">
+              <span class="integrations__name" [style.color]="int.color">{{ int.name }}</span>
+            </div>
+          </div>
+        }
+      </div>
+
+      <p class="integrations__api" [appAos]="'fade-up'" [aosDelay]="200">
+        <span class="material-icons-round">code</span>
+        Também disponível via <strong>API REST & Webhooks</strong> para integração com qualquer sistema
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 7 — TESTIMONIALS
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="testimonials section section--surface" aria-labelledby="testimonials-title">
+    <div class="container">
+      <app-section-header
+        eyebrow="Clientes que confiam"
+        title="O que nossos clientes"
+        titleHighlight="estão falando."
+        subtitle="PMEs que transformaram sua operação logística com OptiFlow."
+        [appAos]="'fade-up'"
+      />
+
+      <div class="testimonials__grid grid-3">
+        @for (t of testimonials; track t.authorName; let i = $index) {
+          <app-testimonial-card
+            [quote]="t.quote"
+            [authorName]="t.authorName"
+            [role]="t.role"
+            [company]="t.company"
+            [avatarBg]="t.avatarBg"
+            [appAos]="'fade-up'"
+            [aosDelay]="i * 100"
+          />
+        }
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 8 — PRICING PREVIEW
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="pricing-preview section" aria-labelledby="pricing-title">
+    <div class="container">
+      <app-section-header
+        eyebrow="Planos e preços"
+        title="Preço justo para"
+        titleHighlight="qualquer tamanho."
+        subtitle="Do pequeno entregador ao médio distribuidor — temos o plano certo para seu momento."
+        [appAos]="'fade-up'"
+      />
+
+      <div class="pricing-preview__grid" [appAos]="'fade-up'" [aosDelay]="100">
+        <app-pricing-card
+          planName="Starter"
+          description="Para operações iniciais com pequena frota."
+          [price]="197"
+          [annualPrice]="158"
+          [features]="starterFeatures"
+          ctaLabel="Começa grátis 14 dias"
+        />
+        <app-pricing-card
+          planName="Professional"
+          description="Para PMEs em crescimento com demanda maior."
+          [price]="397"
+          [annualPrice]="318"
+          [features]="professionalFeatures"
+          [highlighted]="true"
+          badge="Mais popular"
+          ctaLabel="Começar agora"
+        />
+        <app-pricing-card
+          planName="Enterprise"
+          description="Para operações complexas de grande escala."
+          [features]="enterpriseFeatures"
+          [enterprise]="true"
+          ctaLabel="Falar com vendas"
+        />
+      </div>
+
+      <div class="pricing-preview__cta" [appAos]="'fade-up'" [aosDelay]="200">
+        <a routerLink="/planos" class="pricing-preview__cta-link">
+          Ver comparativo completo de planos
+          <span class="material-icons-round">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 9 — CTA FINAL
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="cta-final" aria-labelledby="cta-title">
+    <div class="cta-final__bg" aria-hidden="true"></div>
+    <div class="container cta-final__inner">
+      <div [appAos]="'zoom-in'" class="cta-final__content">
+        <span class="cta-final__eyebrow">Pronto para começar?</span>
+        <h2 id="cta-title" class="cta-final__title">
+          Pronto para otimizar<br/>sua logística?
+        </h2>
+        <p class="cta-final__subtitle">
+          Cadastre-se gratuitamente e teste por 14 dias. Sem cartão de crédito. Cancele quando quiser.
+        </p>
+
+        @if (!emailSubmitted) {
+          <form class="cta-final__form" (ngSubmit)="submitCtaEmail()" aria-label="Criar conta grátis">
+            <div class="cta-final__input-wrap">
+              <span class="material-icons-round cta-final__input-icon" aria-hidden="true">mail</span>
+              <input
+                type="email"
+                [(ngModel)]="ctaEmail"
+                name="ctaEmail"
+                placeholder="Seu e-mail corporativo"
+                class="cta-final__input"
+                required
+                autocomplete="email"
+                aria-label="Endereço de e-mail"
+              />
+            </div>
+            <button type="submit" class="cta-final__btn" [disabled]="!ctaEmail.includes('@')">
+              <span class="material-icons-round" aria-hidden="true">rocket_launch</span>
+              Criar conta grátis
+            </button>
+          </form>
+        } @else {
+          <div class="cta-final__success" role="alert">
+            <span class="material-icons-round">check_circle</span>
+            Perfeito! Em breve você receberá um e-mail com os próximos passos.
+          </div>
+        }
+
+        <div class="cta-final__badges">
+          <span><span class="material-icons-round">lock</span> Dados protegidos pela LGPD</span>
+          <span><span class="material-icons-round">credit_card_off</span> Sem cartão de crédito</span>
+          <span><span class="material-icons-round">cancel</span> Cancele quando quiser</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

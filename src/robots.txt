@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.optiflow.com.br/sitemap.xml
+
+# Disallow admin/internal routes
+Disallow: /api/
+Disallow: /admin/
